@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+ 
+   <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/navbar-fixed-top.css">
+   
+   <script src="cordova.js"></script>
+   <script src="js/signals.min.js"></script>
+   <script src="js/crossroads.min.js"></script>
+   <script src="js/hasher.min.js"></script>
+   <script src="js/bootbox.min.js"></script>
+   <script src="js/index.js"></script>
+   <script src="js/jquery-3.2.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <title>Hello Pepe</title>
+</head>
+
+<body>
+   
+
+   <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+         <div class="navbar-header">
+            <a class="navbar-brand" href="#/sqliteclick"><span class="glyphicon glyphicon-menu-hamburger"></span>Project K5</a>
+         </div>
+
+      </div>
+   </nav>
+
+   <div class="container">
+
+      <div class="well" id="divStudentList" style="display:block">
+         <div class="row">
+            <div class="col-sm-12">
+               <table class="table table-condensed table-striped table-hover" id="tblStudent">
+
+                  <thead>
+                     <tr>
+                     </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+               </table>
+            </div>
+
+         </div>
+      </div>
+      <!--Container Ends-->
+   </div>
+
+<div class="container">
+   <div class="well" id="divFrmShowStudent" style="display:none">
+      <div class="row">
+         <div class="col-sm-6">
+            <form id="frmShowStudent">
+               <fieldset>
+                  <div class="col-lg-8 col-lg-offset-4">
+                     <h3>User Details</h3>
+                  </div>
+                  <div class="form-group">
+                     <label for="studentId" class="col-lg-4 control-label">Nickname</label>
+                     <div class="col-lg-8">
+                        <input type="text" id="studentidshow" class="form-control" placeholder="Nickname"
+                           readonly />
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="Name" class="col-lg-4 control-label">Username</label>
+                     <div class="col-lg-8">
+                        <input type="text" id="studentnameshow" class="form-control" placeholder="Username"
+                           readonly />
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="Phone Number" class="col-lg-4 control-label">Password</label>
+                     <div class="col-lg-8">
+                        <input type="text" id="studentphoneshow" class="form-control" placeholder="Password"
+                           readonly />
+                     </div>
+                  </div>
+
+                  <div class="form-group text-right">
+                     <div class="col-lg-8 col-lg-offset-4">
+
+                        <a class="btn btn-primary btn-lg" href="" id="idShowStudent" role="button"><span
+                              class="glyphicon glyphicon-pencil"></span></a>
+                        <a class="btn btn-primary btn-lg" href="" id="idDeleteStudent" role="button"><span
+                              class="glyphicon glyphicon-trash"></span></a>
+                     </div>
+                  </div>
+               </fieldset>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="container">
+
+   <div class="well" id="divFrmEditStudent" style="display:none">
+      <div class="row">
+         <div class="col-sm-6">
+            <form id="frmEditStudent">
+               <fieldset>
+                  <div class="col-lg-8 col-lg-offset-4">
+                     <h3>Edit User Details</h3>
+                  </div>
+                  <div>
+                     <label for="studentId" class="col-lg-4 control-label">Nickname</label>
+                     <div class="col-lg-8">
+                        <input type="text" id="studentidedit" class="form-control" placeholder="Nickname"
+                           readonly />
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="Name" class="col-lg-4 control-label">Username</label>
+                     <div class="col-lg-8">
+                        <input type="text" id="studentnameedit" class="form-control" placeholder="Username"
+                           required />
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="Phone Number" class="col-lg-4 control-label">Password</label>
+                     <div class="col-lg-8">
+                        <input type="text" id="studentphoneedit" class="form-control" placeholder="Password"
+                           required />
+                     </div>
+                  </div>
+
+                  <div class="form-group text-right">
+                     <div class="col-lg-8 col-lg-offset-4">
+
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" value="submit">Update</button>
+
+                     </div>
+                  </div>
+               </fieldset>
+            </form>
+         </div>
+      </div>
+   </div>
+
+   <!--form for editing-->
+   <div class="container">
+
+      <div class="well" id="divFrmInputStudent" style="display:none">
+         <div class="row">
+            <div class="col-sm-6">
+               <form id="frmInputStudent">
+                  <fieldset>
+                     <div class="col-lg-8 col-lg-offset-4">
+                        <h3>Input New User</h3>
+                     </div>
+                     <div>
+                        <label for="studentId" class="col-lg-4 control-label">User Nickname</label>
+                        <div class="col-lg-8">
+                           <input type="text" id="studentidinput" class="form-control" placeholder="Nickname"
+                              required />
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label for="Name" class="col-lg-4 control-label">Name</label>
+                        <div class="col-lg-8">
+                           <input type="text" id="studentnameinput" class="form-control" placeholder="Username"
+                              required />
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label for="Phone Number" class="col-lg-4 control-label">Password</label>
+                        <div class="col-lg-8">
+                           <input type="text" id="studentphoneinput" class="form-control" placeholder="Password"
+                              required />
+                        </div>
+                     </div>
+
+                     <div class="form-group text-right">
+                        <div class="col-lg-8 col-lg-offset-4">
+
+                           <button class="btn btn-lg btn-primary btn-block" type="submit" value="submit">Submit</button>
+                           <button class="btn btn-lg btn-danger btn-block" type="reset" value="reset">Reset</button>
+
+                        </div>
+                     </div>
+                  </fieldset>
+               </form>
+            </div>
+         </div>
+      </div>
+
+   </div>
+   <nav class="navbar navbar-fixed-bottom">
+      <div class="well text-right" id="divAddStdBtn" style="display:block">
+         <a class="btn btn-primary btn-lg" href="#btnAddStudent" role="button"><span
+               class="glyphicon glyphicon-plus"></span></a>
+      </div>
+   </nav>
+
+   <script src="cordova.js"></script>
+   <script src="js/signals.min.js"></script>
+   <script src="js/crossroads.min.js"></script>
+   <script src="js/hasher.min.js"></script>
+   <script src="js/bootbox.min.js"></script>
+   <script src="js/index.js"></script>
+   <script src="js/jquery-3.2.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
